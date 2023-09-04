@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<htm lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title>Boggle</title>
+        <link rel="stylesheet" href="bogglestyle.css"/>
+    </head>
+    <body>
+        <div id="title">
+            Game of Boggle
+        </div>
+       <div id="content">
+        <table class="board">
+            {% for row in board %}
+            <tr>
+                {% for cell in row %}
+                <td>{{cell}}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </table>
+        <div class="score-board">
+            <div class="timer">Time left: <span class="seconds">60</span> Seconds</div>
+            <div class="score-div">Current score: <span class="score"></span></div>
+            <div class="words-title">Found words:</div>
+            <div class="words"></div>
+        </div>
+        <div class="guess">
+            <p class="message">
+
+            </p>
+            <form class="form-guess">
+                <label for="word">Guess a word:</label>
+                <input
+                  class="word"
+                  id="word"
+                  name="word"
+                  type="text"
+                  pattern="^[a-zA-Z]*"
+                  minlength="1"
+                  maxlength="20"
+                  required
+                />
+                <button type="submit">Submit</button>
+
+            </form>
+        </div>
+        <div class="history">
+            <div class="history-title">Play history:</div>
+            <div class="history-content">
+                <ul>
+                    {% for i in range(10 if history | length > 10 else history | length) %}
+                      <li>{{ history[-1 - i].time }} : {{ history[-1 -i].score }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+       </div> 
+       <script src="https://code.jquery.com/jquery"></script>
+       <script src="https://unpkg.com/axios@0.19.0/dist/axios.js"></script>
+       <script src="/static/boggle.js"></script>
+       <script>
+        let game = new BoggleGame("boggle", 60);
+       </script>
+ 
+    </body>
+</html>

@@ -1,0 +1,117 @@
+body{
+    background-color: orange;
+}
+#title{
+    font-size: 5em;
+    color: blue;
+    text-align: center;
+    margin: auto;
+    padding: 20px;
+}
+#content{
+    display: flex;
+    flex-wrap: wrap;
+}
+.board{
+    width: 300px;
+    height: 300px;
+    margin: auto 10px auto auto;
+    background-color: white;
+}
+.board td{
+    text-align: center;
+    width: 60px;
+    height: 60px;
+    color: white;
+    background-color: blue;
+    font-size: 3em;
+    font-weight: 600;
+
+}
+.score-board {
+    max-width: 600px;
+    text-align: left;
+    font-size: 2em;
+    margin: 10px auto auto 10px;
+}
+.timer{
+    color: green;
+}
+.seconds{
+    color: red;
+
+}
+.score-div{
+    color: blue;
+}
+.score{
+    color: red;
+}
+.words-title{
+    color: green;
+}
+.words{
+    color:blueviolet;
+}
+.words span{
+    margin: 0px 5px 0px 5px;
+}
+.guess{
+    text-align: center;
+    padding: 20px;
+    margin: auto;
+}
+
+.guess input, button, label{
+    font-size: 2em;
+    font-weight: 300;
+    color: brown; 
+    margin: 5px;
+}
+.guess input{
+    width: 200px;
+}
+.guess button{
+    padding: 0px 10px 0 px 10px;
+    border-radius: 10px;
+}
+.message {
+    text-align: center;
+    color: red;
+    font-size: 2em;
+    display: none;
+}
+.history {
+    margin: 10px auto auto auto;
+}
+.history-title {
+    text-align: center;
+    font-size: 2em;
+    color: green;
+
+}
+.history-content {
+    font-size: 1.5em;
+    color: beige;
+}
+@media only screen and (max-width:600px) {
+    #title{
+        font-size: 3em;
+    }
+    .board{
+        order: 1;
+        margin: auto;
+    }
+    .score-board{
+        order: 3;
+        margin: auto;
+    }
+    .guess{
+        order: 2;
+        margin: auto;
+    }
+    .history {
+        margin: auto;
+        order: 4;
+    }
+}
